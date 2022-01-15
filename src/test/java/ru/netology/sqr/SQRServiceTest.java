@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 class SQRServiceTest {
 
     @DisplayName("Should count squares quantity")
-    @ParameterizedTest(name = "#{index} - {0}, [{1}–{2}]")
+    @ParameterizedTest(name = "#{index} - {0} [{1} - {2}]")
     @CsvSource(
             value = {
                     "middle range, 200, 300, 3",
@@ -22,7 +22,7 @@ class SQRServiceTest {
             }
     )
 
-    void shouldCountSquares(String test, int lowerLimit, int upperLimit, int expected) {
+    void shouldCountSquares(String name, int lowerLimit, int upperLimit, int expected) {
         SQRService sqr = new SQRService();
 
         int actual = sqr.countSquares(lowerLimit, upperLimit);
